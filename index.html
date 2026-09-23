@@ -8,7 +8,97 @@
     :root{--navy:#061b3a;--navy2:#0b2d5a;--red:#d71920;--red-dark:#b81117;--light:#f4f6f9;--ink:#182235;--muted:#5b6779;--white:#fff;--gold:#f7b733;--radius:14px;--shadow:0 14px 34px rgba(5,25,56,.12)}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.5}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.container{width:min(1160px,calc(100% - 32px));margin:auto}h1,h2,h3{line-height:1.15;margin-top:0}h2{color:var(--navy);font-size:clamp(1.7rem,3vw,2.45rem);margin-bottom:12px}.eyebrow{color:var(--red);font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px}.section-lead{color:var(--muted);max-width:720px;margin:0 auto 32px}.btn{display:inline-flex;justify-content:center;align-items:center;min-height:48px;padding:12px 22px;border:1px solid transparent;border-radius:6px;font-weight:800;cursor:pointer;transition:.2s ease}.btn-primary{background:var(--red);color:#fff;box-shadow:0 8px 18px rgba(215,25,32,.25)}.btn-primary:hover{background:var(--red-dark);transform:translateY(-1px)}.btn-outline{border-color:rgba(255,255,255,.75);color:#fff;background:rgba(255,255,255,.06)}.btn-outline:hover{background:#fff;color:var(--navy)}
     .site-header{background:rgba(6,27,58,.97);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 2px 12px rgba(0,0,0,.2)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-size:1.25rem;font-weight:900;font-style:italic;letter-spacing:-.04em;white-space:nowrap}.brand span{color:var(--red)}.nav-links{display:flex;align-items:center;gap:22px;font-size:.93rem;font-weight:700}.nav-links a:hover{color:#f5b5b8}.nav .btn{min-height:42px;padding:9px 16px;white-space:nowrap}.menu-toggle{display:none;border:0;background:transparent;color:#fff;font-size:1.4rem}
-    .hero{position:relative;min-height:650px;display:grid;place-items:center;overflow:hidden;color:#fff;background:var(--navy)}.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}.hero-fallback{position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(3,18,44,.94) 0%,rgba(3,18,44,.78) 42%,rgba(3,18,44,.16) 78%),url('image.jpg') center/cover no-repeat}.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(3,18,44,.88),rgba(3,18,44,.46) 52%,rgba(3,18,44,.08))}.hero-content{position:relative;z-index:2;width:min(1160px,calc(100% - 32px));padding:90px 0}.hero-copy{width:min(680px,100%)}h1{font-size:clamp(2.35rem,5vw,4.4rem);margin:0 0 18px;letter-spacing:-.04em}.hero p{font-size:clamp(1rem,1.7vw,1.25rem);max-width:600px;margin-bottom:28px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px}.trust-row{display:flex;flex-wrap:wrap;gap:18px;margin-top:36px;font-size:.92rem;font-weight:700}.trust-item{display:flex;gap:8px;align-items:center}.trust-item b{color:#ff9a9e}
+    .hero{
+  position:relative;
+  min-height:650px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  color:#fff;
+  background:var(--navy);
+}
+
+.hero-video{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  z-index:0;
+}
+
+.hero-video iframe{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:100vw;
+  height:56.25vw;
+  min-width:177.78vh;
+  min-height:100%;
+  transform:translate(-50%,-50%);
+  border:0;
+  pointer-events:none;
+}
+
+.hero-fallback{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background:linear-gradient(90deg,rgba(3,18,44,.94) 0%,rgba(3,18,44,.78) 42%,rgba(3,18,44,.16) 78%),url('image.jpg') center/cover no-repeat;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(90deg,rgba(3,18,44,.88),rgba(3,18,44,.46) 52%,rgba(3,18,44,.08));
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  width:min(1160px,calc(100% - 32px));
+  padding:90px 0;
+}
+
+.hero-copy{
+  width:min(680px,100%);
+}
+
+h1{
+  font-size:clamp(2.35rem,5vw,4.4rem);
+  margin:0 0 18px;
+  letter-spacing:-.04em;
+}
+
+.hero p{
+  font-size:clamp(1rem,1.7vw,1.25rem);
+  max-width:600px;
+  margin-bottom:28px;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.trust-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  margin-top:36px;
+  font-size:.92rem;
+  font-weight:700;
+}
+
+.trust-item{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.trust-item b{
+  color:#ff9a9e;
+}
     /* Aucun petit titre rose dans la zone vidéo. Les drapeaux sont intégrés directement dans cette page : aucun fichier Drapeaux.png requis. */
     .country-badges{position:absolute;z-index:4;right:24px;bottom:23px;display:flex;align-items:center;gap:9px;padding:8px 11px;border-radius:38px;background:rgba(3,18,44,.64);border:1px solid rgba(255,255,255,.22);box-shadow:0 8px 22px rgba(0,0,0,.30)}.flag-ring{width:52px;height:52px;padding:3px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,#ffe992 0%,#ad750d 42%,#f7d266 70%,#966208 100%);box-shadow:0 4px 12px rgba(0,0,0,.36),inset 0 0 0 1px rgba(255,255,255,.55)}.flag-face{width:100%;height:100%;border-radius:50%;overflow:hidden;border:2px solid rgba(255,255,255,.84);background:#fff;display:grid;place-items:center}.flag-face svg{width:100%;height:100%;display:block}.country-label{font-size:.73rem;font-weight:800;line-height:1.25;color:#fff;margin-left:2px}
     section{padding:78px 0}.section-head{text-align:center}.catalogue{background:var(--light)}.filter-panel{background:#fff;padding:18px;display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:12px;border-radius:var(--radius);box-shadow:var(--shadow);margin:28px 0 30px}.filter-panel select{border:1px solid #d6dde8;border-radius:6px;min-height:48px;padding:0 12px;background:#fff;color:var(--ink)}.vehicle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.vehicle-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 9px 25px rgba(5,25,56,.09);display:flex;flex-direction:column}.vehicle-image{height:205px;width:100%;object-fit:cover;background:#dce4ed}.vehicle-body{padding:18px;display:flex;flex-direction:column;gap:11px;flex-grow:1}.vehicle-body h3{color:var(--navy);margin:0;font-size:1.2rem}.specs{color:var(--muted);font-size:.88rem;margin:0}.price{font-weight:900;color:var(--red);font-size:1.1rem}.vehicle-body .btn{margin-top:auto}.notice{text-align:center;color:var(--muted);font-size:.86rem;margin:25px auto 0;max-width:880px}
