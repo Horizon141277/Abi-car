@@ -324,16 +324,67 @@
           </div>
         </div>
 
-        <form class="form-card" onsubmit="submitContact(event)">
-          <h3>Envoyez-nous un message</h3>
-          <div class="form-grid">
-            <div class="form-field"><label for="cname">Nom et prénom *</label><input id="cname" required></div>
-            <div class="form-field"><label for="cphone">Téléphone / WhatsApp *</label><input id="cphone" required></div>
-            <div class="form-field full"><label for="cemail">E-mail</label><input id="cemail" type="email"></div>
-            <div class="form-field full"><label for="cmessage">Message *</label><textarea id="cmessage" required></textarea></div>
-          </div>
-          <button class="btn btn-primary" type="submit">Envoyer ma demande</button>
-        </form>
+        <form
+  class="form-card"
+  action="https://formspree.io/f/mzezvjdl"
+  method="POST"
+>
+  <h3>Envoyez-nous un message</h3>
+
+  <div class="form-grid">
+    <div class="form-field">
+      <label for="cname">Nom et prénom *</label>
+      <input
+        id="cname"
+        name="nom"
+        type="text"
+        required
+        placeholder="Votre nom"
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="cphone">Téléphone / WhatsApp *</label>
+      <input
+        id="cphone"
+        name="telephone"
+        type="tel"
+        required
+        placeholder="Ex. +213 ..."
+      >
+    </div>
+
+    <div class="form-field full">
+      <label for="cemail">E-mail</label>
+      <input
+        id="cemail"
+        name="email"
+        type="email"
+        placeholder="votre@email.com"
+      >
+    </div>
+
+    <div class="form-field full">
+      <label for="cmessage">Message *</label>
+      <textarea
+        id="cmessage"
+        name="message"
+        required
+        placeholder="Écrivez votre message ici..."
+      ></textarea>
+    </div>
+  </div>
+
+  <input
+    type="hidden"
+    name="_subject"
+    value="Nouveau message de contact — ABI CAR ALGÉRIE"
+  >
+
+  <button class="btn btn-primary" type="submit">
+    Envoyer ma demande
+  </button>
+</form>
       </div>
     </section>
   </main>
