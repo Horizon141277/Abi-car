@@ -236,19 +236,97 @@
             <li>Conseils adaptés au modèle recherché</li>
           </ul>
         </div>
-        <form class="form-card" onsubmit="submitQuote(event)">
-          <div class="form-grid">
-            <div class="form-field"><label for="name">Nom et prénom *</label><input id="name" required placeholder="Votre nom"></div>
-            <div class="form-field"><label for="phone">WhatsApp / téléphone *</label><input id="phone" required placeholder="Ex. +213 ..."></div>
-            <div class="form-field"><label for="model">Marque ou modèle recherché</label><input id="model" placeholder="Ex. Chery Tiggo 8"></div>
-            <div class="form-field"><label for="condition">État souhaité</label><select id="condition"><option>Neuf</option><option>Occasion</option><option>Indifférent</option></select></div>
-            <div class="form-field"><label for="budget">Budget approximatif</label><input id="budget" placeholder="Ex. 20 000 €"></div>
-            <div class="form-field"><label for="city">Ville en Algérie</label><input id="city" placeholder="Ex. Alger"></div>
-            <div class="form-field full"><label for="message">Votre demande</label><textarea id="message" placeholder="Options souhaitées, boîte automatique/manuelle, délai, questions..."></textarea></div>
-          </div>
-          <button class="btn btn-primary" type="submit">Recevoir mon devis personnalisé</button>
-          <p class="privacy">En envoyant ce formulaire, vous acceptez d’être recontacté au sujet de votre demande.</p>
-        </form>
+        <form
+  class="form-card"
+  action="https://formspree.io/f/xbglkzrz"
+  method="POST"
+>
+  <div class="form-grid">
+    <div class="form-field">
+      <label for="name">Nom et prénom *</label>
+      <input
+        id="name"
+        name="nom"
+        type="text"
+        required
+        placeholder="Votre nom"
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="phone">WhatsApp / téléphone *</label>
+      <input
+        id="phone"
+        name="telephone"
+        type="tel"
+        required
+        placeholder="Ex. +213 ..."
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="model">Marque ou modèle recherché</label>
+      <input
+        id="model"
+        name="modele_recherche"
+        type="text"
+        placeholder="Ex. Chery Tiggo 8"
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="condition">État souhaité</label>
+      <select id="condition" name="etat_souhaite">
+        <option value="Neuf">Neuf</option>
+        <option value="Occasion">Occasion</option>
+        <option value="Indifférent">Indifférent</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="budget">Budget approximatif</label>
+      <input
+        id="budget"
+        name="budget"
+        type="text"
+        placeholder="Ex. 20 000 €"
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="city">Ville en Algérie</label>
+      <input
+        id="city"
+        name="ville"
+        type="text"
+        placeholder="Ex. Alger"
+      >
+    </div>
+
+    <div class="form-field full">
+      <label for="message">Votre demande</label>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Options souhaitées, boîte automatique/manuelle, délai, questions..."
+      ></textarea>
+    </div>
+  </div>
+
+  <input
+    type="hidden"
+    name="_subject"
+    value="Nouvelle demande de devis — ABI CAR ALGÉRIE"
+  >
+
+  <button class="btn btn-primary" type="submit">
+    Recevoir mon devis personnalisé
+  </button>
+
+  <p class="privacy">
+    En envoyant ce formulaire, vous acceptez d’être recontacté au sujet de votre demande.
+  </p>
+</form>
       </div>
     </section>
 
