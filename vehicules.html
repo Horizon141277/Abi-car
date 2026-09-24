@@ -14,6 +14,17 @@
     .cta{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff}.cta-wrap{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}.cta h2{color:#fff;margin-bottom:10px}.cta p{color:#dce6f4;margin:0;max-width:700px}.cta .btn{background:#fff;color:var(--navy)}.cta .btn:hover{background:#f3f6fb;transform:translateY(-1px)}
     .site-footer{background:#031126;color:#b8c6d9;padding:30px 0;font-size:.9rem}.footer-wrap{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-links{display:flex;flex-wrap:wrap;gap:15px}.footer-links a:hover{color:#fff}.whatsapp{position:fixed;right:20px;bottom:20px;z-index:55;background:#25D366;color:#fff;width:58px;height:58px;display:grid;place-items:center;border-radius:50%;box-shadow:0 8px 24px rgba(0,0,0,.25);font-size:1.65rem;font-weight:900}
     @media(max-width:900px){.hero-description{position:static;transform:none;width:auto;font-size:clamp(.95rem,1.4vw,1.08rem)!important;margin-top:12px}.hero-inner{max-width:790px;grid-template-columns:1fr;gap:12px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--navy);padding:18px 16px;flex-direction:column;align-items:flex-start}.nav-links.open{display:flex}.menu-toggle{display:block}.nav .header-quote{display:none}.vehicle-detail{grid-template-columns:1fr}.vehicle-photo{min-height:330px;max-height:460px}.coming-grid{grid-template-columns:1fr 1fr}.cta-wrap{grid-template-columns:1fr}.cta .btn{justify-self:start}}@media(max-width:580px){section{padding:55px 0}.hero{padding:62px 0}.spec-grid,.equipment-list,.coming-grid{grid-template-columns:1fr}.vehicle-info{padding:24px 20px}.vehicle-photo{min-height:260px}.footer-wrap{flex-direction:column;align-items:flex-start}.vehicle-actions .btn{width:100%;flex:auto}}
+ .chat{position:fixed;right:20px;bottom:91px;z-index:60}
+.chat-button{width:58px;height:58px;border:0;border-radius:50%;background:#0b2d5a;color:#fff;font-size:1.55rem;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.chat-box{display:none;position:absolute;right:0;bottom:70px;width:min(330px,calc(100vw - 40px));overflow:hidden;border-radius:14px;background:#fff;box-shadow:0 14px 40px rgba(3,17,38,.28)}
+.chat.open .chat-box{display:block}
+.chat-head{padding:15px 17px;background:#061b3a;color:#fff;font-size:1rem;font-weight:800}
+.chat-body{padding:16px;color:#35455c;font-size:.92rem;line-height:1.55}
+.chat-body p{margin:0 0 14px}
+.quick-actions{display:grid;gap:8px}
+.quick-actions a{display:block;padding:10px 12px;border:1px solid #dbe4ef;border-radius:8px;background:#f7f9fc;color:#0b2d5a;font-weight:700;text-decoration:none}
+.quick-actions a:hover{background:#edf2f8}
+@media(max-width:580px){.chat{right:14px;bottom:84px}.chat-button{width:53px;height:53px}.chat-box{width:min(310px,calc(100vw - 28px))}}
   </style>
 </head>
 <body>
@@ -112,5 +123,23 @@
 
   <footer class="site-footer"><div class="container footer-wrap"><div>© 2026 ABI CAR ALGÉRIE. Tous droits réservés.</div><div class="footer-links"><a href="index.html#contact">Contact</a><a href="index.html#devis">Demander un devis</a><a href="index.html">Accueil</a></div></div></footer>
   <a class="whatsapp" href="https://wa.me/213657851072" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp">◔</a>
+<div class="chat" id="chat">
+  <button class="chat-button" aria-label="Ouvrir l'assistant" onclick="document.getElementById('chat').classList.toggle('open')">💬</button>
+
+  <div class="chat-box">
+    <div class="chat-head">Assistant ABI CAR Algérie</div>
+
+    <div class="chat-body">
+      <p>Bonjour 👋 Je peux vous aider à consulter les véhicules disponibles, préparer une demande de devis ou vous orienter vers WhatsApp.</p>
+
+      <div class="quick-actions">
+        <a href="index.html#devis" onclick="document.getElementById('chat').classList.remove('open')">Je veux un devis</a>
+        <a href="#catalogue" onclick="document.getElementById('chat').classList.remove('open')">Voir les véhicules</a>
+        <a href="index.html#etapes" onclick="document.getElementById('chat').classList.remove('open')">Comment importer ?</a>
+        <a href="https://wa.me/213657851072" target="_blank" rel="noopener">Parler sur WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
