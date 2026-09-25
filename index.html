@@ -284,14 +284,21 @@
     </div>
 
     <div class="form-field">
-      <label for="budget">Budget approximatif</label>
-      <input
-        id="budget"
-        name="budget"
-        type="text"
-        placeholder="Ex. 20 000 €"
-      >
-    </div>
+  <label for="budget">Budget approximatif</label>
+
+  <div class="budget-field">
+    <input
+      id="budget"
+      name="budget"
+      type="number"
+      placeholder="0.00"
+      min="0"
+      step="0.01"
+      inputmode="decimal"
+    >
+    <span>DA</span>
+  </div>
+</div>
 
     <div class="form-field">
       <label for="city">Ville en Algérie</label>
